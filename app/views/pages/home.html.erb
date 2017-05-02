@@ -8,7 +8,7 @@
         <h3 class="panel-title">Phone Number</h3>
       </div>
       <div class="panel-body">
-        <%= form_tag("/search", method: "get") do %>
+        <%= form_tag(sms_send_path, method: "post") do %>
             <%= text_field_tag 'sms', nil, placeholder: 'Enter number here...', size: 75 %>
           <% end %>
       </div>
@@ -21,7 +21,7 @@
         <h3 class="panel-title">SMS Message</h3>
       </div>
       <div class="panel-body">
-        <%= form_tag("/search", method: "get") do %>
+        <%= form_tag(sms_send_path, method: "post") do %>
             <%= text_field_tag 'sms', nil, placeholder: 'Enter text here...', size: 75 %>
           <% end %>
       </div>
