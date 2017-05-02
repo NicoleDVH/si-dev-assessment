@@ -29,4 +29,6 @@
   </p>
   
 
-<button type="button" class="btn btn-success btn-lg" id="success">Send</button>
+<%= form_tag("/search", method: "get") do %>
+  <%= submit_tag("Send", :class => "btn btn-success btn-lg" ) %>
+<% end %>
