@@ -29,6 +29,6 @@
   </p>
   
 
-<%= form_tag("/search", method: "get") do %>
-  <%= submit_tag("Send", :class => "btn btn-success btn-lg" ) %>
+<%= form_tag(sms_send_path, method: "post") do %>
+  <%= submit_tag("Send", :class => "btn btn-success btn-lg") %>
 <% end %>
