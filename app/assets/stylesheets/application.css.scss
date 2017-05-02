@@ -1,3 +1,15 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
+
+$body-bg:                          #3498db;
+$jumbotron-bg:                     #bdc3c7;
+$jumbotron-heading-color:          white;
+$jumbotron-font-size:              16x;
+$font-family-sans-serif:           "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -10,6 +22,5 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
  */
+
