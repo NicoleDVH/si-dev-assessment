@@ -34,6 +34,8 @@ gem 'bootstrap-sass', '~> 3.3.6'
 
 gem 'byebug'
 
+gem 'twilio-ruby'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
