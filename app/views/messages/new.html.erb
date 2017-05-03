@@ -1,0 +1,32 @@
+ <%= render 'messages/form' %>
+ 
+  <p>
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h3 class="panel-title">Phone Number</h3>
+      </div>
+      <div class="panel-body">
+        <%= form_tag(sms_send_path, method: "post") do %>
+            <%= text_field(:number, nil, placeholder: 'Enter number here...', size: 75) %>
+          <% end %>
+      </div>
+    </div>
+  </p>
+  
+    <p>
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h3 class="panel-title">SMS Message</h3>
+      </div>
+      <div class="panel-body">
+        <%= form_tag(sms_send_path, method: "post") do %>
+           <%= text_field(:text, nil, placeholder: 'Enter text here...', size: 75) %>
+          <% end %>
+      </div>
+    </div>
+  </p>
+  
+
+<%= form_tag(sms_send_path, method: "post") do %>
+  <%= submit_tag("Send", :class => "btn btn-success btn-lg") %>
+<% end %>

@@ -1,4 +1,5 @@
-class User < ApplicationRecord
+class User < ActiveRecord::Base
+    has_many :messages
   # Not great: this regex rejects valid addresses and accepts invalid ones
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   before_save { self.email = email.downcase }

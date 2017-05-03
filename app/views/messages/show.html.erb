@@ -1,0 +1,23 @@
+ <%= render 'messages/form' %>
+
+<p>
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h3 class="panel-title">Phone Number</h3>
+      </div>
+      <div class="panel-body">
+        <%= @message.number %>
+      </div>
+    </div>
+  </p>
+  
+    <p>
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h3 class="panel-title">SMS Message</h3>
+      </div>
+      <div class="panel-body">
+        <%= @message.text %>
+      </div>
+    </div>
+  </p>
