@@ -2,28 +2,25 @@ class MessagesController < ApplicationController
   before_action :set_message, only: [:show, :edit, :update, :destroy]
 
   def index
-    @messages = Message.all
+    @message = Message.all
   end
 
   def show
-    @messages = Message.find(message_params)
   end
 
   def new
-    set_message
-    @message = Message.new(message_params)
+    @message = Message.new
   end
 
   def edit
   end
 
   def create
-    set_message
-    @message = Message.new(message_params)
+    @message = Message.create(message_params)
     if @message.save
-      redirect_to sms_send_path
-    else
-      redirect_to root_path
+      redirect_to @message
+    else 
+      flash[:alert] = "Contact not send message!"
     end
   end
 
@@ -37,15 +34,13 @@ class MessagesController < ApplicationController
 
   def destroy
     @message.destroy
-    respond_to do |format|
-      redirect_to messages_url
-    end
+    redirect_to messages_url
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_message
-      @message = Message.find(message_params)
+      @message = Message.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allowset_message the white list through.
