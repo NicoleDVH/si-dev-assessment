@@ -21,7 +21,7 @@ class MessagesController < ApplicationController
     if @message.save
       redirect_to @message
     else 
-      flash[:alert] = "Contact not send message!"
+      flash[:alert] = "Could not send message!"
     end
   end
 
