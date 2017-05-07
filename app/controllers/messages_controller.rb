@@ -14,9 +14,10 @@ class MessagesController < ApplicationController
 
   def edit
   end
-
+  
   def create
     @message = Message.create(message_params)
+    send_sms(message_params)
     if @message.save
       redirect_to @message
     else 
@@ -47,5 +48,18 @@ class MessagesController < ApplicationController
     def message_params
       params.require(:message).permit(:number, :text)
     end
-    
+
+    def send_sms(message_params)
+    account_sid = ENV["TWILIO_SID"] 
+    auth_token = ENV["TWILIO_TOKEN"] 
+     
+    @client = Twilio::REST::Client.new account_sid, auth_token
+        
+    message = @client.account.messages.create(:body => @message.text,
+    :to => @message.number,
+    :from => ENV["FROM"]) 
+         
+    rescue Twilio::REST::RequestError => e
+  end
+  
 end
